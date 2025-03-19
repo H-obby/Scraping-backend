@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import exampleRoutes from './routes/exampleRoutes';
+import featsRoutes from './routes/featsRoutes'
 
 // Load environment variables
 dotenv.config();
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api', exampleRoutes);
+app.use('/api', featsRoutes);
 
 // Basic route
 app.get('/', (req, res) => {
